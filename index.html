@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Genesis Snap — A Marvel-themed hackathon and pitching competition at UEM. 8 hours of coding, top 20 teams pitch their ideas. Open to all college students. August 22-24, 2026." />
+  <meta name="keywords" content="hackathon, pitching competition, UEM, Genesis Snap, Marvel, college event, coding, innovation" />
+  <meta name="author" content="Genesis Snap Team" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Genesis Snap — Hackathon & Pitching Competition" />
+  <meta property="og:description" content="With great code, comes great innovation. 8-hour hackathon + pitching competition at UEM. August 2026." />
+  <meta property="og:type" content="website" />
+
+  <title>Genesis Snap | Hackathon & Pitching Competition — UEM</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+
+  <!-- Favicon (Spider-Man themed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕸️</text></svg>" />
+</head>
+
+<body>
+  <!-- ===== PRELOADER ===== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner"></div>
+    <div class="preloader__text">GENESIS SNAP</div>
+  </div>
+
+  <!-- ===== THUNDER FLASH OVERLAY ===== -->
+  <div class="thunder-flash"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">
+        <!-- Spider Web Icon -->
+        <svg class="navbar__logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L12 22M2 12L22 12M4.93 4.93L19.07 19.07M19.07 4.93L4.93 19.07" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+          <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="0.7"/>
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        </svg>
+        GENESIS SNAP
+      </a>
+
+      <ul class="navbar__links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#prizes">Prizes</a></li>
+        <li><a href="#organizers">Team</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#register" class="navbar__cta">Snap In →</a></li>
+      </ul>
+
+      <button class="navbar__toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__sticky">
+      <!-- Video Background -->
+      <div class="hero__video-wrap">
+        <video
+          id="hero-video"
+          class="hero__video"
+          src="comics-style-spiderman-live-wallpaper.mp4"
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+      </div>
+
+      <!-- Thunder overlay -->
+      <div class="hero__thunder-overlay"></div>
+
+      <!-- Web particle canvas -->
+      <canvas id="web-canvas" class="hero__canvas"></canvas>
+
+      <!-- Hero Content (Right Side) -->
+      <div class="hero__content">
+        <div class="hero__tag">
+          <span>UEM Presents</span>
+        </div>
+
+        <h1 class="hero__title glitch-subtle" data-text="GENESIS SNAP">
+          <span class="title-genesis">Genesis</span>
+          <span class="title-snap">Snap</span>
+        </h1>
+
+        <p class="hero__tagline">
+          "With great code, comes great innovation."
+        </p>
+
+        <div class="hero__date">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+          <span>August 22 – 24, 2026</span>
+        </div>
+
+        <div class="hero__cta-group">
+          <a href="#register" class="btn btn-primary" id="hero-register-btn">
+            🕸️ Snap In — Register Now
+          </a>
+          <a href="#about" class="btn btn-outline" id="hero-learn-btn">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="spider-thread"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about section" id="about">
+    <div class="web-bg-pattern"></div>
+    <div class="web-corner web-corner--tl"></div>
+    <div class="web-corner web-corner--tr"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>The Mission</span>
+        </p>
+        <h2 class="section-title gradient-text-red glitch" data-text="ASSEMBLE YOUR TEAM">ASSEMBLE YOUR TEAM</h2>
+        <p class="section-subtitle">
+          The multiverse of innovation opens its gates. Are you ready to answer the call?
+        </p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text reveal-left">
+          <div class="marvel-quote">
+            The world is changing. It's time we change too. But the real question is... can you build something that changes everything in just 8 hours?
+          </div>
+
+          <p>
+            <strong>Genesis Snap</strong> is not just a hackathon — it's a proving ground for the next generation of innovators. 
+            Inspired by the epic scale of the Marvel universe, this two-phase event challenges you to build, 
+            present, and defend your ideas like a true Avenger.
+          </p>
+          <p>
+            <strong>Round 1 — The Hackathon:</strong> 8 relentless hours of coding, designing, and innovating. 
+            Build a project from scratch. No shortcuts. No cheat codes. Just raw talent and teamwork.
+          </p>
+          <p>
+            <strong>Round 2 — The Pitch:</strong> Top 20 teams face the jury. 3 minutes to pitch. 4 minutes of Q&A. 
+            Only the worthy survive. <em>"I can do this all day."</em>
+          </p>
+
+          <div class="about__stats">
+            <div class="stat-card reveal delay-1">
+              <div class="stat-card__number" data-count="8" data-suffix="hrs">0</div>
+              <div class="stat-card__label">Hackathon</div>
+            </div>
+            <div class="stat-card reveal delay-2">
+              <div class="stat-card__number" data-count="20" data-prefix="Top ">0</div>
+              <div class="stat-card__label">Finalists</div>
+            </div>
+            <div class="stat-card reveal delay-3">
+              <div class="stat-card__number" data-count="3" data-suffix=" min">0</div>
+              <div class="stat-card__label">Pitch Time</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__visual reveal-right">
+          <div class="about__emblem float">
+            <div class="about__emblem-inner">
+              <span class="emblem-icon">🕷️</span>
+              <span class="emblem-text">Est. 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== TIMELINE SECTION ===== -->
+  <section class="timeline section" id="timeline">
+    <div class="web-bg-pattern"></div>
+    <div class="web-corner web-corner--br"></div>
+    <div class="web-corner web-corner--bl"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>Battle Plan</span>
+        </p>
+        <h2 class="section-title gradient-text-multi glitch" data-text="THE TIMELINE">THE TIMELINE</h2>
+        <p class="section-subtitle">
+          "Part of the journey is the end." — Tony Stark. Here's the roadmap to your destiny.
+        </p>
+      </div>
+
+      <div class="timeline__track">
+        <!-- Round 1: Hackathon -->
+        <div class="timeline__item timeline__item--left web-sling-in">
+          <div class="timeline__node"></div>
+          <div class="timeline__card">
+            <div class="timeline__round">Round 1</div>
+            <h3>The Hackathon</h3>
+            <div class="timeline__date">
+              <span>📅</span>
+              <span>22nd August 2026</span>
+            </div>
+            <p>"Whatever it takes." — 8 hours. One shot. Build something extraordinary.</p>
+            <ul class="timeline__detail-list">
+              <li>8-hour coding marathon</li>
+              <li>Build from scratch — any tech stack</li>
+              <li>Team size: 2-4 members</li>
+              <li>Mentors available throughout</li>
+              <li>Top 20 teams advance to Round 2</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Lightning between -->
+        <div class="timeline__lightning" style="top: 48%;">⚡</div>
+
+        <!-- Selection Phase -->
+        <div class="timeline__item timeline__item--right web-sling-in-right">
+          <div class="timeline__node timeline__node--blue"></div>
+          <div class="timeline__card">
+            <div class="timeline__round timeline__round--blue">Selection</div>
+            <h3>The Snap</h3>
+            <div class="timeline__date">
+              <span>🔥</span>
+              <span>23rd August 2026</span>
+            </div>
+            <p>"I am inevitable." — Judges review all projects. Only the top 20 survive the snap.</p>
+            <ul class="timeline__detail-list">
+              <li>Project evaluation by expert jury</li>
+              <li>Innovation, feasibility, execution scored</li>
+              <li>Top 20 teams announced</li>
+              <li>Finalists notified for Round 2</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Lightning between -->
+        <div class="timeline__lightning" style="top: 73%;">⚡</div>
+
+        <!-- Round 2: Pitching -->
+        <div class="timeline__item timeline__item--left web-sling-in">
+          <div class="timeline__node"></div>
+          <div class="timeline__card">
+            <div class="timeline__round">Round 2</div>
+            <h3>The Pitch</h3>
+            <div class="timeline__date">
+              <span>🎙️</span>
+              <span>24th August 2026</span>
+            </div>
+            <p>"I can do this all day." — Present your vision. Defend your creation. Win it all.</p>
+            <ul class="timeline__detail-list">
+              <li>3 minutes per team to pitch</li>
+              <li>4 minutes of Q&A with judges</li>
+              <li>Live audience + expert panel</li>
+              <li>Top 3 winners declared</li>
+              <li>Goodies & swags for all finalists</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== PRIZES SECTION ===== -->
+  <section class="prizes section" id="prizes">
+    <div class="web-bg-pattern"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>The Loot</span>
+        </p>
+        <h2 class="section-title gradient-text-red glitch" data-text="PRIZES & GLORY">PRIZES & GLORY</h2>
+        <p class="section-subtitle">
+          "Everybody wants a happy ending, right?" — Here's yours. Fight for it.
+        </p>
+      </div>
+
+      <!-- Top 3 Prize Cards -->
+      <div class="prizes__grid">
+        <!-- 2nd Place -->
+        <div class="prize-card prize-card--silver reveal delay-1">
+          <div class="prize-card__rank">2</div>
+          <span class="prize-card__icon">🥈</span>
+          <h3 class="prize-card__title">2ND PLACE</h3>
+          <div class="prize-card__value gradient-text-blue">Exciting Prizes</div>
+          <p class="prize-card__desc">
+            "I had a date." — And you've earned the right to brag. Silver-tier glory with epic rewards.
+          </p>
+        </div>
+
+        <!-- 1st Place (Featured) -->
+        <div class="prize-card prize-card--gold reveal">
+          <div class="prize-card__rank">1</div>
+          <span class="prize-card__icon">🏆</span>
+          <h3 class="prize-card__title">1ST PLACE</h3>
+          <div class="prize-card__value" style="color: #FFD700;">Grand Prize</div>
+          <p class="prize-card__desc">
+            "I am Iron Man." — The ultimate champion. The greatest prize. The legend of Genesis Snap.
+          </p>
+        </div>
+
+        <!-- 3rd Place -->
+        <div class="prize-card prize-card--bronze reveal delay-2">
+          <div class="prize-card__rank">3</div>
+          <span class="prize-card__icon">🥉</span>
+          <h3 class="prize-card__title">3RD PLACE</h3>
+          <div class="prize-card__value" style="color: #CD7F32;">Amazing Prizes</div>
+          <p class="prize-card__desc">
+            "That's my secret, I'm always angry." — Bronze never looked this good.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bonus Rewards -->
+      <div class="prizes__bonus">
+        <div class="bonus-card reveal delay-3">
+          <div class="bonus-card__icon">🎁</div>
+          <div class="bonus-card__text">
+            <h4>SWAGS & GOODIES</h4>
+            <p>All 20 finalists in Round 2 receive exclusive merchandise, swags, and goodies. "Avengers Assemble!"</p>
+          </div>
+        </div>
+
+        <div class="bonus-card reveal delay-4">
+          <div class="bonus-card__icon">📜</div>
+          <div class="bonus-card__text">
+            <h4>PARTICIPATION CERTIFICATE</h4>
+            <p>Every single participant gets a certificate. "Proof that Tony Stark has a heart." — Proof that you showed up.</p>
+          </div>
+        </div>
+
+        <div class="bonus-card reveal delay-5">
+          <div class="bonus-card__icon">🍕</div>
+          <div class="bonus-card__text">
+            <h4>FOOD & REFRESHMENTS</h4>
+            <p>Meals, snacks, and unlimited coffee/tea are on us throughout the hackathon. "Even a super-soldier serum can't beat a hungry coder." Fuel up and keep building.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== ORGANIZERS SECTION ===== -->
+  <section class="organizers section" id="organizers">
+    <div class="web-bg-pattern"></div>
+    <div class="web-corner web-corner--tl"></div>
+    <div class="web-corner web-corner--br"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>The Avengers</span>
+        </p>
+        <h2 class="section-title gradient-text-multi glitch" data-text="THE ORGANIZERS">THE ORGANIZERS</h2>
+        <p class="section-subtitle">
+          "We're the Avengers. We can bust arms dealers all the live-long day." — Meet the team behind Genesis Snap.
+        </p>
+      </div>
+
+      <div class="organizers__grid">
+        <!-- Organizer 1 -->
+        <div class="organizer-card reveal delay-1">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-1.jpg" alt="Organizer 1" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 1</h4>
+          <p class="organizer-card__role">Lead Organizer</p>
+        </div>
+
+        <!-- Organizer 2 -->
+        <div class="organizer-card reveal delay-2">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-2.jpg" alt="Organizer 2" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 2</h4>
+          <p class="organizer-card__role">Co-Lead</p>
+        </div>
+
+        <!-- Organizer 3 -->
+        <div class="organizer-card reveal delay-3">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-3.jpg" alt="Organizer 3" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 3</h4>
+          <p class="organizer-card__role">Tech Lead</p>
+        </div>
+
+        <!-- Organizer 4 -->
+        <div class="organizer-card reveal delay-4">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-4.jpg" alt="Organizer 4" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 4</h4>
+          <p class="organizer-card__role">Design Lead</p>
+        </div>
+
+        <!-- Organizer 5 -->
+        <div class="organizer-card reveal delay-5">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-5.jpg" alt="Organizer 5" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 5</h4>
+          <p class="organizer-card__role">Marketing Lead</p>
+        </div>
+
+        <!-- Organizer 6 -->
+        <div class="organizer-card reveal delay-6">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-6.jpg" alt="Organizer 6" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 6</h4>
+          <p class="organizer-card__role">Logistics</p>
+        </div>
+
+        <!-- Organizer 7 -->
+        <div class="organizer-card reveal delay-7">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-7.jpg" alt="Organizer 7" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 7</h4>
+          <p class="organizer-card__role">Operations</p>
+        </div>
+
+        <!-- Organizer 8 -->
+        <div class="organizer-card reveal delay-8">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-8.jpg" alt="Organizer 8" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 8</h4>
+          <p class="organizer-card__role">Sponsorship</p>
+        </div>
+
+        <!-- Organizer 9 -->
+        <div class="organizer-card reveal delay-1">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-9.jpg" alt="Organizer 9" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 9</h4>
+          <p class="organizer-card__role">Content Lead</p>
+        </div>
+
+        <!-- Organizer 10 -->
+        <div class="organizer-card reveal delay-2">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-10.jpg" alt="Organizer 10" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 10</h4>
+          <p class="organizer-card__role">Media Lead</p>
+        </div>
+
+        <!-- Organizer 11 -->
+        <div class="organizer-card reveal delay-3">
+          <div class="organizer-card__web"></div>
+          <div class="organizer-card__avatar"><img src="assets/organizers/organizer-11.jpg" alt="Organizer 11" loading="lazy" /></div>
+          <h4 class="organizer-card__name">Organizer 11</h4>
+          <p class="organizer-card__role">Volunteer Coordinator</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-lg);" class="reveal">
+        <div class="marvel-quote" style="display:inline-block; text-align:left;">
+          "Heroes are made by the path they choose, not the powers they are graced with." — Iron Man
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== RULES & REGULATIONS SECTION ===== -->
+  <section class="rules section" id="rules">
+    <div class="web-bg-pattern"></div>
+    <div class="web-corner web-corner--tl"></div>
+    <div class="web-corner web-corner--tr"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>Read Before You Snap</span>
+        </p>
+        <h2 class="section-title gradient-text-blue glitch" data-text="RULES & REGULATIONS">RULES & REGULATIONS</h2>
+        <p class="section-subtitle">
+          "With great power comes great responsibility." Every hero plays by the rules — here's the code of conduct for Genesis Snap.
+        </p>
+      </div>
+
+      <div class="rules__grid">
+        <div class="rules-card reveal delay-1">
+          <div class="rules-card__icon">🏛️</div>
+          <h3 class="rules-card__title">Venue & Logistics</h3>
+          <ul class="rules-card__list">
+            <li><strong>Punctuality is mandatory</strong> — arrive at the venue (IEM New Town / UEM) by 9:00 AM sharp. Registration and check-in will wrap up quickly, and the event officially commences at exactly 9:30 AM.</li>
+            <li><strong>College ID is mandatory</strong> — every student must carry their physical college ID card. It will be verified at the registration desk, and entry will be denied without it.</li>
+            <li><strong>Professional dress code</strong> — formal, decent attire is mandatory for all participants for the entire duration of the event.</li>
+          </ul>
+        </div>
+
+        <div class="rules-card reveal delay-2">
+          <div class="rules-card__icon">🤖</div>
+          <h3 class="rules-card__title">The "Gemini-Only" AI Protocol</h3>
+          <ul class="rules-card__list">
+            <li><strong>Google Gemini is the only AI platform permitted</strong> during this hackathon. The use of any other AI tools or code assistants is strictly prohibited.</li>
+            <li><strong>Mandatory Prompt Audit Log</strong> — every team must submit a single PDF alongside their final project, containing screenshots, shared links, or a full export of every conversation and prompt used in Gemini during the event.</li>
+            <li>If the audit log is missing or incomplete, <strong>the project will not be evaluated</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="rules-card reveal delay-3">
+          <div class="rules-card__icon">💻</div>
+          <h3 class="rules-card__title">Bring Your Own Tech</h3>
+          <ul class="rules-card__list">
+            <li>Participants are responsible for bringing their own <strong>laptops, chargers</strong>, and any necessary adapters.</li>
+            <li>Come prepared — plan for your own hardware for the full 8-hour hackathon.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="faq section" id="faq">
+    <div class="web-bg-pattern"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>Still Have Questions?</span>
+        </p>
+        <h2 class="section-title gradient-text-red glitch" data-text="FAQ">FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="section-subtitle">
+          Everything a rookie hero needs to know before the snap.
+        </p>
+      </div>
+
+      <div class="faq__list reveal">
+        <details class="faq-item">
+          <summary class="faq-item__question">Who can participate in Genesis Snap?</summary>
+          <p class="faq-item__answer">Genesis Snap is open to all college students across India. Teams must have 2–4 members — solo entries aren't accepted.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">What should I bring to the venue?</summary>
+          <p class="faq-item__answer">Your laptop, charger, and any adapters you need, plus your physical college ID card — entry is not allowed without it. Formal, decent attire is mandatory too.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">Will food be provided?</summary>
+          <p class="faq-item__answer">Yes! Meals, snacks, and unlimited coffee/tea are provided throughout the 8-hour hackathon so you can stay focused on building.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">Which AI tools are we allowed to use?</summary>
+          <p class="faq-item__answer">Only Google Gemini is permitted during the hackathon — no other AI tools or code assistants are allowed. See the Rules & Regulations section above for the full protocol, including the mandatory Prompt Audit Log.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">What happens after Round 1?</summary>
+          <p class="faq-item__answer">A jury reviews every project submitted during the hackathon. The top 20 teams are then announced and advance to Round 2, the live pitching round.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">How does the pitching round work?</summary>
+          <p class="faq-item__answer">Each of the top 20 teams gets 3 minutes to pitch, followed by 4 minutes of Q&A with the judging panel, in front of a live audience.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">Can we use any tech stack?</summary>
+          <p class="faq-item__answer">Yes — build with whatever tech stack your team is comfortable with. The only constraint is that your project must be built from scratch during the hackathon, using Gemini as your only AI assistant.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">Is there a registration fee?</summary>
+          <p class="faq-item__answer">Registration details, including any fee, will be shared on the official registration page — check back closer to the event.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== REGISTER SECTION ===== -->
+  <section class="register section" id="register">
+    <div class="web-bg-pattern"></div>
+    <div class="web-corner web-corner--tl"></div>
+    <div class="web-corner web-corner--tr"></div>
+    <div class="web-corner web-corner--bl"></div>
+    <div class="web-corner web-corner--br"></div>
+
+    <div class="container">
+      <div class="register__content reveal">
+        <span class="register__snap-icon">🫰</span>
+
+        <p class="hero__tag" style="opacity:1;transform:none;animation:none;">
+          <span>Your Move, Hero</span>
+        </p>
+
+        <h2 class="section-title gradient-text-red glitch" data-text="SNAP INTO ACTION">SNAP INTO ACTION</h2>
+
+        <div class="marvel-quote" style="text-align:center; border-left:none; padding:0; margin: var(--space-sm) auto var(--space-md); max-width: 500px;">
+          "I am inevitable... and so is your participation. The question isn't whether you'll register — it's whether you'll survive the snap."
+        </div>
+
+        <p class="register__desc">
+          Assemble your team. Choose your stack. Enter the arena.
+          Whether you're a web warrior, an AI architect, or a blockchain bender — 
+          <strong>this is your moment</strong>. Genesis Snap awaits.
+        </p>
+
+        <div class="register__eligibility">
+          🎓 Open to all college students across India
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+          <div class="countdown__block">
+            <div class="countdown__number" id="countdown-days">--</div>
+            <div class="countdown__label">Days</div>
+          </div>
+          <div class="countdown__block">
+            <div class="countdown__number" id="countdown-hours">--</div>
+            <div class="countdown__label">Hours</div>
+          </div>
+          <div class="countdown__block">
+            <div class="countdown__number" id="countdown-mins">--</div>
+            <div class="countdown__label">Minutes</div>
+          </div>
+          <div class="countdown__block">
+            <div class="countdown__number" id="countdown-secs">--</div>
+            <div class="countdown__label">Seconds</div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-md);">
+          <a href="#" class="btn btn-primary" id="register-btn" style="font-size: 1.1rem; padding: 1.2rem 3rem;">
+            🕸️ Register on Unstop
+          </a>
+        </div>
+
+        <p style="margin-top: var(--space-sm); font-size: 0.8rem; color: var(--clr-text-muted); font-family: var(--font-heading); letter-spacing: 0.1em;">
+          Registration link will be live soon!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DIVIDER ===== -->
+  <div class="section-divider"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="web-corner web-corner--tl"></div>
+    <div class="web-corner web-corner--tr"></div>
+
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">🕸️ GENESIS SNAP</div>
+          <div class="footer__org">University of Engineering & Management</div>
+        </div>
+
+        <ul class="footer__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#organizers">Team</a></li>
+          <li><a href="#rules">Rules</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__tribute">"Excelsior!" — Stan Lee</p>
+        <p class="footer__copyright">
+          © 2026 Genesis Snap. Crafted with 🕷️ by the Genesis Snap Team at UEM.
+          <br />
+          <span style="font-size: 0.65rem; opacity: 0.5;">Not affiliated with Marvel Entertainment. This is a fan-themed college event.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/countdown.js"></script>
+</body>
+</html>
