@@ -1,12 +1,12 @@
 /* ============================================
    GENESIS SNAP — Countdown Timer
-   Counts down to hackathon date: Aug 22, 2026
+   Counts down to registration deadline: Aug 17, 2026 11:59 PM IST
    ============================================ */
 
 (function () {
   'use strict';
 
-  const TARGET_DATE = new Date('2026-08-22T09:00:00+05:30').getTime();
+  const TARGET_DATE = new Date('2026-08-17T23:59:00+05:30').getTime();
 
   const daysEl = document.getElementById('countdown-days');
   const hoursEl = document.getElementById('countdown-hours');
@@ -37,14 +37,14 @@
       minsEl.textContent = '00';
       secsEl.textContent = '00';
 
-      // Show "Event Started" message (only once)
+      // Show "Registration Closed" message (only once)
       if (!eventLiveShown) {
         eventLiveShown = true;
         const countdownSection = document.querySelector('.countdown');
         if (countdownSection) {
           const msg = document.createElement('div');
           msg.className = 'countdown__live';
-          msg.innerHTML = '<span class="pulse-glow" style="display:inline-block;padding:0.5rem 1.5rem;border-radius:var(--radius-sm);background:var(--clr-red);color:#fff;font-family:var(--font-heading);font-size:0.8rem;letter-spacing:0.2em;">🔴 EVENT IS LIVE</span>';
+          msg.innerHTML = '<span class="pulse-glow" style="display:inline-block;padding:0.5rem 1.5rem;border-radius:var(--radius-sm);background:var(--clr-red);color:#fff;font-family:var(--font-heading);font-size:0.8rem;letter-spacing:0.2em;">🔴 REGISTRATION CLOSED</span>';
           msg.style.marginTop = '1rem';
           countdownSection.appendChild(msg);
         }
