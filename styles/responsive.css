@@ -50,12 +50,17 @@
     gap: var(--space-sm);
   }
 
+  .iitb-showcase__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+
   .navbar__links {
     gap: 1.2rem;
   }
 
   .navbar__links a {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -200,6 +205,23 @@
     margin: 0 auto var(--space-lg);
   }
 
+  .prizes__featured {
+    max-width: 100%;
+  }
+
+  .prizes__featured-inner {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .prizes__featured-cities {
+    gap: var(--space-sm);
+  }
+
+  .prizes__featured-city {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
   .prizes__bonus {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -247,6 +269,61 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+  }
+
+  /* IIT Bombay section mobile */
+  .iitb-showcase__cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .iitb-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .iitb-card__content {
+    text-align: center;
+  }
+
+  .iitb-title__line2 {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .iitb-title__line3 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+
+  /* Register mobile */
+  .register__buttons-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .register__or-divider::before,
+  .register__or-divider::after {
+    display: none;
+  }
+
+  /* Contact mobile */
+  .contact__grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  /* Footer contact mobile */
+  .footer__contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer__contact-sep {
+    display: none;
   }
 }
 
